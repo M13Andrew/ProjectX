@@ -20,3 +20,22 @@ class TestOne:
         assert message.text == 'You have done a dynamic click'
         time.sleep(1)
         driver.quit()
+
+    def test_two(self):
+        driver_service = Service(ChromeDriverManager().install())
+        options = webdriver.ChromeOptions()
+        options.add_argument('--window-size=1920,1080')
+        options.add_argument("--incognito")
+        driver = webdriver.Chrome(service=driver_service, options=options)
+        # driver = webdriver.Chrome(service=driver_service)
+        driver.maximize_window()
+        driver.get('https://bes-dev.datawiz.io/login/')
+        wait = WebDriverWait(driver, 15, 0.3)
+        wait.until(ec.visibility_of_element_located((By.ID, "id_auth-username")))
+        login = driver.find_element(By.ID, "id_auth-username")
+        login.send_keys('andrew.masyuk@datawiz.io')
+        password = driver.find_element(By.ID, "id_auth-password")
+        password.send_keys('Qweasd2zxc')
+        button = driver.find_element(By.XPATH, "//button[@class='btn btn-primary btn-block']")
+        button.click()
+        time.sleep(5)
