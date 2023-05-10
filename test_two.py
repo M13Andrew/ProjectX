@@ -19,7 +19,6 @@ class TestTwo:
     def test_three(self):
         # self.login()
         driver_service = Service(ChromeDriverManager().install())
-        options = webdriver.ChromeOptions()
         driver = webdriver.Chrome(service=driver_service)
         driver.maximize_window()
         driver.get('https://bes.datawiz.io/login/')
@@ -50,7 +49,8 @@ class TestTwo:
         # button_n = driver.find_element(By.XPATH, '//div[@class="ant-tabs-tab"][3]')
         button_n.click()
 
-        plan = wait
+        plan_button = driver.find_element(By.XPATH, "//label[@class='ant-radio-button-wrapper'][2]")
+        plan_button.click()
 
         time.sleep(5)
 
