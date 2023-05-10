@@ -50,7 +50,7 @@ class TestTwo:
         # button_n = driver.find_element(By.XPATH, '//div[@class="ant-tabs-tab"][3]')
         button_n.click()
 
-        plan = wai
+        plan = wait
 
         time.sleep(5)
 
