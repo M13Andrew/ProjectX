@@ -26,7 +26,7 @@ class TestTwo:
         button_go[0].click()
         time.sleep(5)
 
-        driver.get('https://bi.datawiz.io/c/148/home/')
+        driver.switch_to.window(driver.window_handles[1])
         time.sleep(5)
         wait.until(ec.element_to_be_clickable((By.XPATH, '//div[@class="ant-tabs-tab"][3]')))
         button_n = driver.find_element(By.XPATH, '//div[@class="ant-tabs-tab"][3]')
