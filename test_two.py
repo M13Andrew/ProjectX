@@ -1,27 +1,7 @@
 from imports import *
 
-class TestOne:
-
-    def test_one(self):
-        driver_service = Service(ChromeDriverManager().install())
-        options = webdriver.ChromeOptions()
-        options.add_argument('--window-size=1920,1080')
-        options.add_argument("--incognito")
-        driver = webdriver.Chrome(service=driver_service, options=options)
-        #driver = webdriver.Chrome(service=driver_service)
-        driver.maximize_window()
-        driver.get('https://demoqa.com/buttons')
-        wait = WebDriverWait(driver, 15, 0.3)
-        wait.until(ec.visibility_of_element_located((By.XPATH, "//button[@class='btn btn-primary']")))
-        button = driver.find_elements(By.XPATH, "//button[@class='btn btn-primary']")
-        button[2].click()
-        wait.until(ec.visibility_of_element_located((By.ID, 'dynamicClickMessage')))
-        message = driver.find_element(By.ID, 'dynamicClickMessage')
-        assert message.text == 'You have done a dynamic click'
-        time.sleep(1)
-        driver.quit()
-
-    def test_two(self):
+class TestTwo:
+    def test_three(self):
         driver_service = Service(ChromeDriverManager().install())
         options = webdriver.ChromeOptions()
         driver = webdriver.Chrome(service=driver_service)
@@ -35,6 +15,7 @@ class TestOne:
         password.send_keys('Qweasd2zxc')
         button = driver.find_element(By.XPATH, "//button[@class='btn btn-primary btn-block']")
         button.click()
+
         wait.until(ec.visibility_of_element_located((By.XPATH, "//div[@class='ant-select-selector']")))
         dropdown = driver.find_elements(By.XPATH, "//div[@class='ant-select-selector']")
         dropdown[0].click()
@@ -43,5 +24,16 @@ class TestOne:
         item[1].click()
         button_go = driver.find_elements(By.XPATH, "//button[@class='ant-btn ant-btn-primary ant-btn-block dw-btn']")
         button_go[0].click()
-        time.sleep(10)
+        time.sleep(5)
+
+        driver.get('https://bi.datawiz.io/c/148/home/')
+        time.sleep(5)
+        wait.until(ec.element_to_be_clickable((By.XPATH, '//div[@class="ant-tabs-tab"][3]')))
+        button_n = driver.find_element(By.XPATH, '//div[@class="ant-tabs-tab"][3]')
+        button_n.click()
+        time.sleep(5)
+
+
+
+
 
