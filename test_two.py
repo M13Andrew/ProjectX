@@ -24,11 +24,12 @@ class TestTwo:
         item[1].click()
         button_go = driver.find_elements(By.XPATH, "//button[@class='ant-btn ant-btn-primary ant-btn-block dw-btn']")
         button_go[0].click()
-        time.sleep(5)
+        # time.sleep(5)
 
         driver.switch_to.window(driver.window_handles[1])
-        time.sleep(5)
-        wait.until(ec.element_to_be_clickable((By.XPATH, '//div[@class="ant-tabs-tab"][3]')))
+        # time.sleep(5)
+
+        wait.until(ec.presence_of_element_located((By.XPATH, '//div[@class="ant-tabs-tab"][3]')))
         button_n = driver.find_element(By.XPATH, '//div[@class="ant-tabs-tab"][3]')
         button_n.click()
         time.sleep(5)
