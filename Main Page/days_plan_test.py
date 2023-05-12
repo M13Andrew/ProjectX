@@ -1,6 +1,6 @@
 from imports import *
 
-class TestClean:
+class TestDays:
     def __init__(self):
         self.driver_service = Service(ChromeDriverManager().install())
         self.driver = webdriver.Chrome(service=self.driver_service)
@@ -63,6 +63,6 @@ class TestClean:
         self.click_button(By.XPATH, "//label[@class='ant-radio-button-wrapper']")
 
 def run():
-    test_class = TestClean()
+    test_class = TestDays()
     test_class.clean()
 run()
