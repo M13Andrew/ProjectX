@@ -11,19 +11,19 @@ class TestDays:
         button.click()
         time.sleep(1)
 
-    def login(self):
+    def login(self, login, password):
         self.driver.maximize_window()
         self.driver.get('https://bes.datawiz.io/login/')
         self.wait.until(ec.visibility_of_element_located((By.ID, 'id_auth-username')))
-        login = self.driver.find_element(By.ID, 'id_auth-username')
-        login.send_keys('andrew.masyuk@datawiz.io')
-        password = self.driver.find_element(By.ID, 'id_auth-password')
-        password.send_keys('Qweasd2zxc')
+        login_input = self.driver.find_element(By.ID, 'id_auth-username')
+        login_input.send_keys(login)
+        password_input = self.driver.find_element(By.ID, 'id_auth-password')
+        password_input.send_keys(password)
         button = self.driver.find_element(By.XPATH, "//button[@class='btn btn-primary btn-block']")
         button.click()
 
     def clean(self):
-        self.login()
+        self.login('andrew.masyuk@datawiz.io', 'Qweasd2zxc')
 
         self.wait.until(ec.visibility_of_element_located((By.XPATH, "//div[@class='ant-select-selector']")))
         dropdown = self.driver.find_elements(By.XPATH, "//div[@class='ant-select-selector']")
@@ -62,7 +62,7 @@ class TestDays:
         self.click_button(By.XPATH, "//label[@class='ant-radio-button-wrapper'][2]")
         self.click_button(By.XPATH, "//label[@class='ant-radio-button-wrapper']")
 
-def run():
-    test_class = TestDays()
-    test_class.clean()
-run()
+# def run():
+#     test_class = TestDays()
+#     test_class.clean()
+# run()
