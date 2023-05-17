@@ -62,7 +62,7 @@ class TestDays:
         self.click_button(By.XPATH, "//label[@class='ant-radio-button-wrapper'][2]")
         self.click_button(By.XPATH, "//label[@class='ant-radio-button-wrapper']")
 
-# def run():
-#     test_class = TestDays()
-#     test_class.clean()
-# run()
+def run():
+    test_class = TestDays()
+    test_class.clean()
+run()
