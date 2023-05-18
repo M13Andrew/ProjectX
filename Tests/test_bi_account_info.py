@@ -9,7 +9,6 @@ class TestBiAccountInfo:
         login = LoginPage(driver, "https://bes.datawiz.io/login/")
         login.open()
         login.login_valid('andrew.masyuk@datawiz.io', 'Qweasd2zxc')
-
         account = AccountPage(driver)
         account.select_client(0, client_position, 0)
         time.sleep(5)
