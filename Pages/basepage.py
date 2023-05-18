@@ -79,3 +79,6 @@ class NextPage:
 
     def click_on_element(self, element):
         self.driver.execute_script("arguments[0].click();", element)
+
+    def close_window(self):
+        self.driver.execute_script("window.close();")
