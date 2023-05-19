@@ -9,7 +9,7 @@ class TestBiCycle:
         login.open()
         login.login_valid('andrew.masyuk@datawiz.io', 'Qweasd2zxc')
         cycle = AccountPage(driver)
-        cycle.test_cycle(0, 0, 10)
+        cycle.test_cycle(0, 0, 11)
 
     # example (for)
     # def test_cycle(self, driver):
