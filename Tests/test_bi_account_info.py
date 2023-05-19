@@ -5,14 +5,6 @@ import time
 
 class TestBiAccountInfo:
 
-    def bi_account(self, driver, client_position):
-        login = LoginPage(driver, "https://bes.datawiz.io/login/")
-        login.open()
-        login.login_valid('andrew.masyuk@datawiz.io', 'Qweasd2zxc')
-        account = AccountPage(driver)
-        account.select_client(0, client_position, 0)
-        time.sleep(5)
-
 
     def test_bi_account_info1(self, driver):
         login = LoginPage(driver, 'https://bes.datawiz.io/login/')
