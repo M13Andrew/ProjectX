@@ -14,7 +14,7 @@ class AccountPage(NextPage):
         go[go_button].click()
         self.switch_to_another_window(1)
 
-    def test_cicle(self, dropdown_count, go_button, count):
+    def test_cycle(self, dropdown_count, go_button, count):
         item_button = 0
         client_position = 0
         count_position = count
