@@ -8,3 +8,4 @@ class AccountPageLocator:
     FIND_ELEMENT = (By.XPATH, "//div[@class='ant-collapse-header']")
 
 
+# ant-collapse-header
