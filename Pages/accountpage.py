@@ -18,8 +18,8 @@ class AccountPage(NextPage):
         item_button = 0
         client_position = 0
         count_position = count
-        while client_position != count_position:
-            if client_position < count_position:
+        while client_position < count_position:
+            # if client_position < count_position:
                 dropdown = self.elements_are_visible(AccountPageLocator.DROPDOWN)
                 dropdown[dropdown_count].click()
                 item = self.elements_are_visible(AccountPageLocator.ITEM_BUTTON)
@@ -28,11 +28,11 @@ class AccountPage(NextPage):
                 go[go_button].click()
                 self.switch_to_another_window(1)
                 time.sleep(1)
-                self.element_is_visible(AccountPageLocator.FIND_ELEMENT).send_keys(Keys.CONTROL + 'w')
+                self.element_is_visible(AccountPageLocator.FIND_ELEMENT)
                 self.close_window()
                 self.switch_to_another_window(0)
                 client_position +=1
                 item_button += 1
-            else:
-                break
+            # else:
+            #     break
 
